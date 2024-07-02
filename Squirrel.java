@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Level1 {
-    public static int squirrel (int N) {
+    public static int squirrel(int N) {
         int factorial = 1;
         for (int i = 2; i <= N; i ++) {
             factorial *= i;
@@ -12,3 +12,5 @@ public class Level1 {
         return factorial;
     }
 }
+
+
