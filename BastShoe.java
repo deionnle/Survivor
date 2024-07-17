@@ -45,7 +45,6 @@ public class Level1 {
 
         }
         if (Operation.undo > Operation.str.size()) {
-            Operation.value = 1;
             Operation.undo = Operation.str.size();
         }
         if (Operation.id == 1) {
