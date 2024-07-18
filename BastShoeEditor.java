@@ -10,6 +10,9 @@ public class Level1 {
             return Level1.del(command);
         }
         if (command.charAt(0) == '3') {
+            if ((Integer.parseInt(command.substring(2)) > stringBuffer.length() - 1)) {
+                return "";
+            }
             return Level1.iss(command);
         }
         if (command.equals("4")) {
