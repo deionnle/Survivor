@@ -13,6 +13,7 @@ public class Level1 {
         String res;
 
         if (commArr[0].equals("1") && Operation.count == 0) {
+            Operation.str.clear();
             Operation.str.add(commArr[1]);
             Operation.count ++;
             Operation.value ++;
@@ -64,7 +65,13 @@ public class Level1 {
             Operation.str.add(res);
             Operation.count ++;
         }
-        if (commArr[0].equals("4") && Operation.value > 0) {
+        if (commArr[0].equals("4") && Operation.count <= 1 && Operation.str.size() <= 1) {
+            Operation.count = 0;
+            Operation.value = 0;
+            Operation.id = 0;
+            res = "";
+            return res;
+        } else if (commArr[0].equals("4") && Operation.value > 0) {
             Operation.count --;
             Operation.value --;
             Operation.id = 0;
@@ -77,5 +84,4 @@ public class Level1 {
         return res;
     }
 }
-
 
