@@ -203,4 +203,22 @@ public class BastShoeEditorTest {
         command = "5";
         assertEquals("Привет, Мир!", BastShoeEditor.BastShoe(command));
     }
+
+    @Test
+    public void issueTest() {
+        String command = "1 Привет";
+        assertEquals("Привет", BastShoeEditor.BastShoe(command));
+        command = "1 , Мир!";
+        assertEquals("Привет, Мир!", BastShoeEditor.BastShoe(command));
+        command = "1 ++";
+        assertEquals("Привет, Мир!++", BastShoeEditor.BastShoe(command));
+        command = "2 2";
+        assertEquals("Привет, Мир!", BastShoeEditor.BastShoe(command));
+        command = "3 6";
+        assertEquals(",", BastShoeEditor.BastShoe(command));
+        command = "3 15";
+        assertEquals("", BastShoeEditor.BastShoe(command));
+        command = "3 6";
+        assertEquals(",", BastShoeEditor.BastShoe(command));
+    }
 }
