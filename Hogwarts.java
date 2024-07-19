@@ -60,6 +60,9 @@ public class Level1 {
                 strNo.add(String.valueOf(val));
             }
         }
+        if (str.isEmpty()) {
+            return "";
+        }
         str.sort(Comparator.naturalOrder());
         return str.getFirst();
     }
