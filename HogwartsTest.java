@@ -55,4 +55,10 @@ public class HogwartsTest {
         String input = "aabbcde";
         assertEquals("aabbced", Hogwarts.BiggerGreater(input));
     }
+
+    @Test
+    public void BiggerGreater() {
+        String input = "za";
+        assertEquals("", Hogwarts.BiggerGreater(input));
+    }
 }
