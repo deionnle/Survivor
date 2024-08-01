@@ -39,7 +39,27 @@ public class Recursion1Test {
     }
 
     @Test
-    public void bidSumTest(){
+    public void bigSumTest(){
         assertEquals(10,Recursion1.sumNumbers(1000000009));
+    }
+
+    @Test
+    public void sum1Test2(){
+        assertEquals(1,Recursion1.sumNumbers2(1, 0));
+    }
+
+    @Test
+    public void sum1432Test2(){
+        assertEquals(10,Recursion1.sumNumbers2(1432, 0));
+    }
+
+    @Test
+    public void sum123456789Test2(){
+        assertEquals(45,Recursion1.sumNumbers2(123456789, 0));
+    }
+
+    @Test
+    public void bigSumTest2(){
+        assertEquals(10,Recursion1.sumNumbers2(1000000009, 0));
     }
 }
