@@ -9,11 +9,17 @@ public class Recursion1 {
     }
 
     public static int sumNumbers(int n) {
-        int sum = 0;
-        if (n > 0) {
-            sum = n % 10;
-            sum += sumNumbers(n / 10);
+        if (n < 10) {
+            return n;
         }
-        return sum;
+        return n % 10 + sumNumbers(n / 10);
+    }
+
+    public static int sumNumbers2(int n, int sum) {
+        if (n < 1) {
+            return sum;
+        }
+        sum += n % 10;
+        return sumNumbers2(n / 10, sum);
     }
 }
