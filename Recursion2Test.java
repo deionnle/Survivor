@@ -13,7 +13,8 @@ public class Recursion2Test {
         list.add("Расчет");
         list.add("длины");
         list.add("списка");
-        assertEquals(17,Recursion2.ListLen(list,0));
+        list.add("4");
+        assertEquals(4,Recursion2.ListLen(list));
     }
 
     @Test

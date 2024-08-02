@@ -2,13 +2,11 @@ import java.util.*;
 
 public class Recursion2 {
     public static int ListLen(List<String> list) {
-        int sum = 0;
-        if (!list.isEmpty()) {
-            sum += list.getFirst().length();
-            list.removeFirst();
-            return sum + ListLen(list);
+        if (list.isEmpty()) {
+            return list.size();
         }
-        return sum;
+        list.removeFirst();
+        return ListLen(list) + 1;
     }
 
     public static boolean palindrom(String str) {
