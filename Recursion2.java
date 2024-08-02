@@ -1,19 +1,23 @@
 import java.util.*;
 
 public class Recursion2 {
-    public static int ListLen(List<String> list, int sum) {
-        if (list.isEmpty()) return sum;
-        sum += list.getFirst().length();
-        list.removeFirst();
-        return ListLen(list,sum);
+    public static int ListLen(List<String> list) {
+        int sum = 0;
+        if (!list.isEmpty()) {
+            sum += list.getFirst().length();
+            list.removeFirst();
+            return sum + ListLen(list);
+        }
+        return sum;
     }
 
     public static boolean palindrom(String str) {
-        if (str.charAt(0) != str.charAt(str.length() - 1)) {
-            return false;
-        }
-        if (str.length() == 1) return true;
-        str = str.substring(1,str.length()-1);
-        return palindrom(str);
+        return index(0,str.length() - 1, str);
+    }
+
+    public static boolean index(int begin, int last, String str) {
+        if (str.charAt(begin) != str.charAt(last)) return false;
+        if (begin == last) return true;
+        return index(begin + 1, last - 1, str);
     }
 }
