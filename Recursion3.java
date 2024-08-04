@@ -2,21 +2,24 @@ import java.util.*;
 
 public class Recursion3 {
     public static void evenNums(List<Integer> list) {
-        if (list.size() == 0) return;
-        if (list.getFirst() % 2 == 0) {
-            System.out.println(list.getFirst());
+        getValue(list, 0);
+    }
+    public static void getValue(List<Integer> list, int n) {
+        if (n == list.size()) return;
+        if (list.get(n) % 2 == 0) {
+            System.out.println(list.get(n));
         }
-        list.removeFirst();
-        evenNums(list);
+        getValue(list, n + 1);
     }
 
     public static void evenIndex(List<String> list) {
-        if (list.size() == 0) return;
-        if (list.indexOf(list.getFirst()) % 2 == 0) {
-            System.out.println(list.getFirst());
-            list.removeFirst();
+        getIndex(list, 0);
+    }
+    public static void getIndex(List<String> list, int n) {
+        if (n == list.size()) return;
+        if (list.indexOf(list.get(n)) % 2 == 0) {
+            System.out.println(list.get(n));
         }
-        list.removeFirst();
-        evenIndex(list);
+        getIndex(list, n + 1);
     }
 }
