@@ -17,9 +17,7 @@ public class Recursion3 {
     }
     public static void getIndex(List<String> list, int n) {
         if (n == list.size()) return;
-        if (list.indexOf(list.get(n)) % 2 == 0) {
-            System.out.println(list.get(n));
-        }
-        getIndex(list, n + 1);
+        System.out.println(list.get(n));
+        getIndex(list, n + 2);
     }
 }
