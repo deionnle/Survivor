@@ -3,7 +3,16 @@ import java.util.*;
 
 public class Recursion4 {
     public static int secondMax(int[] arr) {
-        return maxValue(arr,0,0, 0);
+        int max = 0;
+        int premax = 0;
+        if (arr[0] > arr[1]) {
+            max = arr[0];
+            premax = arr[1];
+        } else {
+            premax = arr[0];
+            max = arr[1];
+        }
+        return maxValue(arr,max,premax, 2);
     }
 
     public static int maxValue(int[] arr, int max, int preMax, int index) {
@@ -17,22 +26,15 @@ public class Recursion4 {
         return maxValue(arr,max,preMax,index + 1);
     }
 
-
-    public static List<File> listFiles(String path) {
-        File root = new File(path);
-        List<File> files = new ArrayList<>();
-        return searchFiles(root, files);
-    }
-
-    public static List<File> searchFiles(File root, List<File> files) {
-        File[] expand = root.listFiles();
-        for (File file : expand) {
-            if (file.isFile()) {
-                files.add(file);
-            } else if (file.isDirectory()){
-                searchFiles(file,files);
-            }
+public static List<File> listFiles(File root, List<File> files) {
+    File[] expand = root.listFiles();
+    for (File file : expand) {
+        if (file.isFile()) {
+            files.add(file);
+        } else if (file.isDirectory()){
+            listFiles(file,files);
         }
-        return files;
+    }
+    return files;
     }
 }

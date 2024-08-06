@@ -1,5 +1,4 @@
 import org.junit.jupiter.api.Test;
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,13 +15,18 @@ public class Recursion4Test {
         assertEquals(5, Recursion4.secondMax(new int[] {2,5,4,3,5}));
         assertEquals(6, Recursion4.secondMax(new int[] {9,5,4,3,6}));
         assertEquals(1, Recursion4.secondMax(new int[] {1,0,1,0,2,0,1,0}));
+        assertEquals(-2, Recursion4.secondMax(new int[] {-2,-5,-8,-3,0}));
+        assertEquals(1, Recursion4.secondMax(new int[] {1,2}));
+        assertEquals(1, Recursion4.secondMax(new int[] {1,1}));
     }
 
     @Test
     public void getListTest() {
         String path = "E:\\exercises";
+        File root = new File(path);
+        List<File> files = new ArrayList<>();
         List<File> expected = scanDir(path);
-        List<File> actual = Recursion4.listFiles(path);
+        List<File> actual = Recursion4.listFiles(root,files);
         Collections.sort(expected);
         Collections.sort(actual);
         assertEquals(expected,actual);
