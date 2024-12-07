@@ -1,17 +1,17 @@
 import java.util.*;
 
-public class Level1 {
+public class TransformTransformation {
     public static boolean TransformTransform(int A[], int N) {
-        int[] SA = transformA(A, N);
-        int[] SSA = transformA(SA, SA.length);
-        int res = Arrays.stream(SSA).sum();
+        int[] singleTransformation = transformA(A, N);
+        int[] doubleTransformation = transformA(singleTransformation, singleTransformation.length);
+        int res = Arrays.stream(doubleTransformation).sum();
         if (res % 2 == 0) {
             return true;
         }
         return false;
     }
     public static int[] transformA(int[] A, int N) {
-        ArrayList<Integer> BValues = new ArrayList<>();
+        ArrayList<Integer> TransformationValues = new ArrayList<>();
         for (int i = 0; i < N ; i ++) {
             for (int j = 0; j < N - i; j ++) {
                 int k = i + j;
@@ -20,12 +20,12 @@ public class Level1 {
                     values.add(A[j + m]);
                 }
                 int max = Collections.max(values);
-                BValues.add(max);
+                TransformationValues.add(max);
             }
         }
-        int[] B = new int[BValues.size()];
+        int[] B = new int[TransformationValues.size()];
         for (int i = 0; i < B.length; i ++) {
-            B[i] = BValues.get(i);
+            B[i] = TransformationValues.get(i);
         }
         return B;
     }

@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Level1 {
+public class WhiteWalkers {
     public static boolean white_walkers(String village) {
         if (village.length() == 0) {
             return false;
@@ -14,7 +14,7 @@ public class Level1 {
         if (values.size() == 1) {
             return false;
         }
-        int tenSum = 0;
+        int sumOfTwoNumbers10 = 0;
         for (int i = 0; i < values.size() - 1; i ++) {
             String s = village.substring(values.get(i), values.get(i + 1) + 1);
             int first = Integer.parseInt(Character.toString(s.charAt(0)));
@@ -29,10 +29,10 @@ public class Level1 {
                 return false;
             }
             if (first + last == 10) {
-                tenSum ++;
+                sumOfTwoNumbers10++;
             }
         }
-        if (tenSum > 0) {
+        if (sumOfTwoNumbers10 > 0) {
             return true;
         }
         return false;
