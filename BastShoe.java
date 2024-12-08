@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Level1 {
+public class BastShoe {
     public static String BastShoe(String command) {
         String[] commArr = command.split(" ", 2);
         class Operation {

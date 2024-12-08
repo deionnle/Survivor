@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Level1 {
+public class TreeofLifeAndrassil {
     public static String [] TreeOfLife(int H, int W, int N, String [] tree) {
         int[][] matrix = new int[H][W];
 

@@ -30,13 +30,13 @@ public class ParatroopersTest {
     @Test
     public void oneNumTest() {
         int [] a = new int[] {2,3};
-        int days = Paratroopers.ConquestCampaign(4,4,2, a);
+        int days = Paratroopers.ConquestCampaign(4,4,1, a);
         assertEquals(5, days);
     }
     @Test
     public void oneDay() {
         int [] a = new int[] {1,1,1,2};
-        int days = Paratroopers.ConquestCampaign(2,2,1, a);
+        int days = Paratroopers.ConquestCampaign(2,2,2, a);
         assertEquals(2, days);
     }
 }

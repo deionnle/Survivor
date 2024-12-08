@@ -1,11 +1,10 @@
-public class Level1 {
+public class TurnMatrix {
     public static void MatrixTurn(String Matrix[], int M, int N, int T) {
 
         int[][] matrix = new int[M][N];
         for (int i = 0; i < M; i ++) {
-            String s = Matrix[i];
             for (int j = 0; j < N; j ++) {
-                matrix[i][j] = Integer.parseInt(Character.toString(s.charAt(j)));
+                matrix[i][j] = Integer.parseInt(Character.toString(Matrix[i].charAt(j)));
             }
         }
         for (int i = 0; i < T; i ++) {

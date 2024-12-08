@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Level1 {
+public class Squirrel {
     public static int squirrel(int N) {
         int factorial = 1;
         for (int i = 2; i <= N; i ++) {

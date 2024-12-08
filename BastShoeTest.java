@@ -30,6 +30,42 @@ public class BastShoeTest {
         assertEquals(",", BastShoe.BastShoe(command));
         command = "2 100";
         assertEquals("", BastShoe.BastShoe(command));
+        command = "1 Привет";
+        assertEquals("Привет", BastShoe.BastShoe(command));
+        command = "1 , Мир!";
+        assertEquals("Привет, Мир!", BastShoe.BastShoe(command));
+        command = "1 ++";
+        assertEquals("Привет, Мир!++", BastShoe.BastShoe(command));
+        command = "4";
+        assertEquals("Привет, Мир!", BastShoe.BastShoe(command));
+        command = "4";
+        assertEquals("Привет", BastShoe.BastShoe(command));
+        command = "5";
+        assertEquals("Привет, Мир!", BastShoe.BastShoe(command));
+        command = "4";
+        assertEquals("Привет", BastShoe.BastShoe(command));
+        command = "5";
+        assertEquals("Привет, Мир!", BastShoe.BastShoe(command));
+        command = "5";
+        assertEquals("Привет, Мир!++", BastShoe.BastShoe(command));
+        command = "5";
+        assertEquals("Привет, Мир!++", BastShoe.BastShoe(command));
+        command = "5";
+        assertEquals("Привет, Мир!++", BastShoe.BastShoe(command));
+        command = "4";
+        assertEquals("Привет, Мир!", BastShoe.BastShoe(command));
+        command = "4";
+        assertEquals("Привет", BastShoe.BastShoe(command));
+        command = "2 2";
+        assertEquals("Прив", BastShoe.BastShoe(command));
+        command = "4";
+        assertEquals("Привет", BastShoe.BastShoe(command));
+        command = "5";
+        assertEquals("Прив", BastShoe.BastShoe(command));
+        command = "5";
+        assertEquals("Прив", BastShoe.BastShoe(command));
+        command = "5";
+        assertEquals("Прив", BastShoe.BastShoe(command));
     }
 
     @Test

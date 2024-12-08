@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Level1 {
+public class PatternAnalysis {
     public static boolean LineAnalysis(String line) {
         int count = 0;
         if (line.charAt(0) != '*' || line.charAt(line.length()-1) != '*') {

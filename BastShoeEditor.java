@@ -1,19 +1,19 @@
 import java.util.*;
 
-public class Level1 {
+public class BastShoeEditor {
     public static String BastShoe(String command) {
 
         if (command.charAt(0) == '1') {
-            return Level1.add(command);
+            return BastShoeEditor.add(command);
         }
         if (command.charAt(0) == '2') {
-            return Level1.del(command);
+            return BastShoeEditor.del(command);
         }
         if (command.charAt(0) == '3') {
             if ((Integer.parseInt(command.substring(2)) > stringBuffer.length() - 1)) {
                 return "";
             }
-            return Level1.iss(command);
+            return BastShoeEditor.iss(command);
         }
         if (command.equals("4")) {
             if (value.get(count).equals("1") || value.get(count).equals("2")) {

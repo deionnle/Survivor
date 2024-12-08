@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Level1 {
+public class TrafficOptimization {
     public static int Unmanned(int L, int N, int[][] track) {
         int index = 0;
         int dist = 0;

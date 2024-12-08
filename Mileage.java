@@ -1,13 +1,11 @@
-import java.util.*;
-
-public class Level1 {
+public class Mileage {
     public static int odometer(int [] oksana) {
         int odo = 0;
-        for (int i = 0; i < oksana.length - 1; i += 2) {
-            if (i == 0) {
-                odo += oksana[i] * oksana[i + 1];
+        for (int speed = 0; speed < oksana.length - 1; speed += 2) {
+            if (speed == 0) {
+                odo += oksana[speed] * oksana[speed + 1];
             } else {
-                odo += oksana[i] * (oksana[i + 1] - oksana[i - 1]);
+                odo += oksana[speed] * (oksana[speed + 1] - oksana[speed - 1]);
             }
         }
         return odo;

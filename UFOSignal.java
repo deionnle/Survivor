@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Level1 {
+public class UFOSignal {
     public static int [] UFO(int N, int [] data, boolean octal) {
         int count = 0;
         if (octal == true) {

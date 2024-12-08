@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Level1 {
+public class MrRobot {
     public static boolean MisterRobot(int N, int [] data) {
         int[] sort = Arrays.copyOf(data, data.length);
         Arrays.sort(sort);

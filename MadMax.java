@@ -1,7 +1,7 @@
 import java.util.*;
 import java.util.Arrays;
 
-public class Level1 {
+public class MadMax {
     public static int [] MadMax(int N, int [] Tele) {
         int [] res = new int[N];
         Arrays.sort(Tele);

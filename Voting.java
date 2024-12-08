@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Level1 {
+public class Voting {
     public static String MassVote(int N, int [] Votes) {
         double total = Arrays.stream(Votes).sum();
         double[] vot = new double[N];

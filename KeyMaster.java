@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Level1 {
+public class KeyMaster {
     public static String Keymaker(int k) {
         int[] doors = new int[k];
         for (int i = 0; i < k; i ++) {

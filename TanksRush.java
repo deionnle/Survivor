@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Level1 {
+public class TanksRush {
     public static boolean TankRush(int H1, int W1, String S1, int H2, int W2, String S2) {
         int[][] map1 = strToArr(H1,W1,S1);
         int[][] map2 = strToArr(H2,W2,S2);

@@ -1,6 +1,4 @@
-import java.util.*;
-
-public class Level1 {
+public class Paratroopers {
     public static int ConquestCampaign(int N, int M, int L, int[] battalion) {
         int[][] platz = new int[N][M];
         int day = 0;
@@ -10,19 +8,19 @@ public class Level1 {
             platz[x][y] = 1;
         }
 
-        boolean flag = true;
-        while (flag) {
-            flag = false;
+        boolean isFreeSquare = true;
+        while (isFreeSquare) {
+            isFreeSquare = false;
             for (int i = 0; i < N; i++) {
                 for (int j = 0; j < M; j++) {
                     if (platz[i][j] == 0) {
-                        flag = true;
+                        isFreeSquare = true;
                         break;
                     }
                 }
             }
             day++;
-            if (!flag) {
+            if (!isFreeSquare) {
                 break;
             }
             for (int i = 0; i < N; i++) {

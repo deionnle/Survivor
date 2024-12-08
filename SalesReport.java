@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Level1 {
+public class SalesReport {
     public static String [] ShopOLAP(int N, String [] items) {
         HashMap<String, Integer> shopList = new HashMap<>();
         for (int i = 0; i < N; i ++) {

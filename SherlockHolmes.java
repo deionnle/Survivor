@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Level1 {
+public class SherlockHolmes {
     public static boolean SherlockValidString(String s) {
         HashMap<Character, Integer> countMap = new HashMap<>();
         for (int i = 0; i < s.length(); i ++) {

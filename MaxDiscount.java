@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Level1 {
+public class MaxDiscount {
     public static int MaximumDiscount(int N, int [] price) {
         int discount = 0;
         Arrays.sort(price);

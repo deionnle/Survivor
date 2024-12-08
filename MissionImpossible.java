@@ -1,13 +1,13 @@
 import java.util.*;
 
-public class Level1 {
+public class MissionImpossible {
     public static String TheRabbitsFoot(String s, boolean encode) {
         String s1 = s.replaceAll(" ", "");
         String res = "";
         int len = s1.length();
         double sq = Math.sqrt(len);
         int n = (int) sq;
-        int m = 0;
+        int m;
         if (sq % n == 0) {
             m = n;
         } else {

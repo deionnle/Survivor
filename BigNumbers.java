@@ -1,6 +1,4 @@
-import java.util.*;
-
-public class Level1 {
+public class BigNumbers {
     public static String BigMinus(String s1, String s2) {
         String res = "";
         if (s1.equals(s2)) {
@@ -8,11 +6,11 @@ public class Level1 {
         }
         char[] ch1;
         char[] ch2;
-        boolean b = false;
+        boolean isStringsAreEqual = false;
         if (s1.length() == s2.length()) {
-            b = equalsStr(s1, s2);
+            isStringsAreEqual = equalsStr(s1, s2);
         }
-        if (s1.length() > s2.length() || b) {
+        if (s1.length() > s2.length() || isStringsAreEqual) {
             ch1 = s1.toCharArray();
             ch2 = s2.toCharArray();
         } else {

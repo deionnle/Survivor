@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Level1 {
+public class PhoneUnlock {
     public static String PatternUnlock(int N, int [] hits) {
         int[][] keyboard = new int[][] {{6,1,9}, {5,2,8}, {4,3,7}};
         double sum = 0;

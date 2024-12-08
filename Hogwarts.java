@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Level1 {
+public class Hogwarts {
     public static String BiggerGreater(String input) {
         ArrayList<String> str = new ArrayList<>();
         ArrayList<String> strNo = new ArrayList<>();

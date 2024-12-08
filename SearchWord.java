@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Level1 {
+public class SearchWord {
     public static int [] WordSearch(int len, String s, String subs) {
         int count = 0;
         int endIndex = 0;
@@ -37,8 +37,7 @@ public class Level1 {
         for (int i = 0; i < str.size(); i ++) {
             String[] words = str.get(i).split(" ");
             for (int j = 0; j < words.length; j ++) {
-                String word = words[j];
-                if (word.equals(subs)) {
+                if (words[j].equals(subs)) {
                     res[i] = 1;
                 }
             }

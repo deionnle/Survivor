@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Level1 {
+public class SavePrinterToner {
     public static int PrintingCosts(String Line) {
         HashMap<Character, Integer> symbolASCII = new HashMap<>();
         symbolASCII.put(' ', 0); symbolASCII.put('&', 24); symbolASCII.put(',', 7);

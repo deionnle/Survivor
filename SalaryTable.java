@@ -1,7 +1,7 @@
 import java.util.*;
 import java.util.HashMap;
 
-public class Level1 {
+public class SalaryTable {
     public static int [] SynchronizingTables(int N, int [] ids, int [] salary) {
         int [] idsSort = new int[N];
         System.arraycopy(ids, 0, idsSort, 0, N);

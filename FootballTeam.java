@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Level1 {
+public class FootballTeam {
     public static boolean Football(int F[], int N) {
         int[] FSort = Arrays.copyOf(F,N);
         Arrays.sort(FSort);
