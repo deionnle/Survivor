@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Voting {
-    public static String MassVote(int N, int [] Votes) {
+    public static String getVotingResult(int N, int [] Votes) {
         double total = Arrays.stream(Votes).sum();
         double[] vot = new double[N];
         for (int i = 0; i < vot.length; i ++) {

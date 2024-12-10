@@ -5,22 +5,22 @@ public class Recursion1Test {
 
     @Test
     public void zeroTest(){
-        assertEquals(1,Recursion1.exp(2,0));
+        assertEquals(1,Recursion1.getExponentiation(2,0));
     }
 
     @Test
     public void oneTest(){
-        assertEquals(2,Recursion1.exp(2,1));
+        assertEquals(2,Recursion1.getExponentiation(2,1));
     }
 
     @Test
     public void sixTest(){
-        assertEquals(64,Recursion1.exp(2,6));
+        assertEquals(64,Recursion1.getExponentiation(2,6));
     }
 
     @Test
     public void bigTest(){
-        assertEquals(4194304,Recursion1.exp(2,22));
+        assertEquals(4194304,Recursion1.getExponentiation(2,22));
     }
 
     @Test

@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Cyberpunk203x {
-    public static boolean EEC_help(int[] arr1, int[] arr2) {
+    public static boolean checkingArraysEquality(int[] arr1, int[] arr2) {
         if (arr1.length != arr2.length) return false;
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < arr1.length; i++) {

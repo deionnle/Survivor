@@ -1,5 +1,5 @@
 public class Mileage {
-    public static int odometer(int [] oksana) {
+    public static int getDistance(int [] oksana) {
         int odo = 0;
         for (int speed = 0; speed < oksana.length - 1; speed += 2) {
             if (speed == 0) {

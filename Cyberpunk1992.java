@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Cyberpunk1992 {
-    public static int massdriver(int[] activate) {
+    public static int getIndexOfDuplicate(int[] activate) {
         HashMap<Integer, Integer> map = new HashMap<>();
         int min = activate.length;
         for (int i = 0; i < activate.length; i++) {

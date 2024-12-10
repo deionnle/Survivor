@@ -1,11 +1,11 @@
 public class Recursion1 {
-    public static int exp(int n, int m) {
+    public static int getExponentiation(int n, int m) {
         if (m == 1) {
             return n;
         } if (m == 0) {
             return 1;
         }
-        return n * exp(n, m - 1);
+        return n * getExponentiation(n, m - 1);
     }
 
     public static int sumNumbers(int n) {
