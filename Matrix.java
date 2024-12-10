@@ -2,23 +2,23 @@ import java.util.*;
 
 public class Matrix {
     public static String digital_rain(String col) {
-        int sum = 0;
-        int begin = 0;
-        int end = 0;
-        HashMap<Integer, Integer> map = new HashMap<>();
+        int difference = 0;
+        int beginIndexOfSubstr = 0;
+        int endIndexOfSubstr = 0;
+        HashMap<Integer, Integer> StorageOfDifference = new HashMap<>();
         for (int i = 0; i < col.length(); i ++) {
            if (col.charAt(i) == '0') {
-               sum--;
+               difference--;
            } else {
-               sum++;
+               difference++;
            }
-           if (map.containsKey(sum) && i - map.get(sum) > end - 1) {
-               end = i - map.get(sum);
-               begin = map.get(sum) + 1;
+           if (StorageOfDifference.containsKey(difference) && i - StorageOfDifference.get(difference) > endIndexOfSubstr - 1) {
+               endIndexOfSubstr = i - StorageOfDifference.get(difference);
+               beginIndexOfSubstr = StorageOfDifference.get(difference) + 1;
            }
-           map.putIfAbsent(sum, i);
+           StorageOfDifference.putIfAbsent(difference, i);
         }
-        if (sum == 0) return col;
-        return col.substring(begin, begin + end);
+        if (difference == 0) return col;
+        return col.substring(beginIndexOfSubstr, beginIndexOfSubstr + endIndexOfSubstr);
     }
 }

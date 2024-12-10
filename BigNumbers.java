@@ -1,55 +1,55 @@
 public class BigNumbers {
     public static String BigMinus(String s1, String s2) {
-        String res = "";
+        String absoluteDifference = "";
         if (s1.equals(s2)) {
-            return res = "0";
+            return absoluteDifference = "0";
         }
-        char[] ch1;
-        char[] ch2;
+        char[] digitsOfFirstNumber;
+        char[] digitsOfSecondNumber;
         boolean isStringsAreEqual = false;
         if (s1.length() == s2.length()) {
             isStringsAreEqual = equalsStr(s1, s2);
         }
         if (s1.length() > s2.length() || isStringsAreEqual) {
-            ch1 = s1.toCharArray();
-            ch2 = s2.toCharArray();
+            digitsOfFirstNumber = s1.toCharArray();
+            digitsOfSecondNumber = s2.toCharArray();
         } else {
-            ch1 = s2.toCharArray();
-            ch2 = s1.toCharArray();
+            digitsOfFirstNumber = s2.toCharArray();
+            digitsOfSecondNumber = s1.toCharArray();
         }
 
-        int[] nums1 = new int[ch1.length];
-        for (int i = 0; i < ch1.length; i ++) {
-            nums1[i] = Character.getNumericValue(ch1[i]);
+        int[] GreatestNumber = new int[digitsOfFirstNumber.length];
+        for (int i = 0; i < digitsOfFirstNumber.length; i ++) {
+            GreatestNumber[i] = Character.getNumericValue(digitsOfFirstNumber[i]);
         }
-        int[] nums2 = new int[ch2.length];
-        for (int i = 0; i < ch2.length; i ++) {
-            nums2[i] = Character.getNumericValue(ch2[i]);
+        int[] SmallerNumber = new int[digitsOfSecondNumber.length];
+        for (int i = 0; i < digitsOfSecondNumber.length; i ++) {
+            SmallerNumber[i] = Character.getNumericValue(digitsOfSecondNumber[i]);
         }
-        int len = nums1.length - nums2.length;
-        for (int i = nums2.length-1; i >= 0; i --) {
-            if (nums1[i + len] >= nums2[i]) {
-                nums1[i + len] = nums1[i + len] - nums2[i];
+        int len = GreatestNumber.length - SmallerNumber.length;
+        for (int i = SmallerNumber.length-1; i >= 0; i --) {
+            if (GreatestNumber[i + len] >= SmallerNumber[i]) {
+                GreatestNumber[i + len] = GreatestNumber[i + len] - SmallerNumber[i];
             }
-            else if (nums1[i + len] < nums2[i]) {
-                nums1[i + len] = nums1[i + len] + 10;
-                nums1[i + len -1] = nums1[i + len - 1] - 1;
-                nums1[i + len] = nums1[i + len] - nums2[i];
-            }
-        }
-        for (int i = nums1.length - 1; i > 0; i --) {
-            if (nums1[i] < 0) {
-                nums1[i] += 10;
-                nums1[i - 1] -= 1;
+            else if (GreatestNumber[i + len] < SmallerNumber[i]) {
+                GreatestNumber[i + len] = GreatestNumber[i + len] + 10;
+                GreatestNumber[i + len -1] = GreatestNumber[i + len - 1] - 1;
+                GreatestNumber[i + len] = GreatestNumber[i + len] - SmallerNumber[i];
             }
         }
-        for (int value : nums1) {
-            res = String.format("%s%s", res, value);
+        for (int i = GreatestNumber.length - 1; i > 0; i --) {
+            if (GreatestNumber[i] < 0) {
+                GreatestNumber[i] += 10;
+                GreatestNumber[i - 1] -= 1;
+            }
         }
-        while (res.charAt(0) == '0') {
-            res = res.substring(1);
+        for (int value : GreatestNumber) {
+            absoluteDifference = String.format("%s%s", absoluteDifference, value);
         }
-        return res ;
+        while (absoluteDifference.charAt(0) == '0') {
+            absoluteDifference = absoluteDifference.substring(1);
+        }
+        return absoluteDifference;
     }
     public static boolean equalsStr(String s1, String s2) {
         for (int i = 0; i < s1.length(); i ++) {

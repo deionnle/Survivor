@@ -2,14 +2,14 @@ import java.util.*;
 
 public class MrRobot {
     public static boolean MisterRobot(int N, int [] data) {
-        int[] sort = Arrays.copyOf(data, data.length);
-        Arrays.sort(sort);
+        int[] ascendingOrder = Arrays.copyOf(data, data.length);
+        Arrays.sort(ascendingOrder);
         int count = 0;
-        while (!Arrays.equals(data, sort) && count < N) {
+        while (!Arrays.equals(data, ascendingOrder) && count < N) {
             data = sortarr(N, data);
             count ++;
         }
-        return Arrays.equals(data, sort);
+        return Arrays.equals(data, ascendingOrder);
     }
 
     public static int[] sortarr(int N, int[] data) {
