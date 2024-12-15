@@ -1,7 +1,5 @@
-import java.util.*;
-
 public class Squirrel {
-    public static int squirrel(int N) {
+    public static int getFirstDigitOfFactorial(int N) {
         int factorial = 1;
         for (int i = 2; i <= N; i ++) {
             factorial *= i;

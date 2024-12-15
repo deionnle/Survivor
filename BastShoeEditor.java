@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class BastShoeEditor {
-    public static String BastShoe(String command) {
+    public static String returnCurrentString(String command) {
 
         if (command.charAt(0) == '1') {
             return BastShoeEditor.add(command);

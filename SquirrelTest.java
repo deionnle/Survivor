@@ -5,9 +5,9 @@ public class SquirrelTest {
 
     @Test
     public void equalsTest () {
-        assertEquals(Squirrel.squirrel(7), 5);
-        assertEquals(Squirrel.squirrel(11), 3);
-        assertEquals(Squirrel.squirrel(2), 2);
-        assertEquals(Squirrel.squirrel(1), 1);
+        assertEquals(Squirrel.getFirstDigitOfFactorial(7), 5);
+        assertEquals(Squirrel.getFirstDigitOfFactorial(11), 3);
+        assertEquals(Squirrel.getFirstDigitOfFactorial(2), 2);
+        assertEquals(Squirrel.getFirstDigitOfFactorial(1), 1);
     }
 }

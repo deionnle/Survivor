@@ -11,13 +11,13 @@ public class Recursion4Test {
 
     @Test
     public void secondMaxValueTest() {
-        assertEquals(5, Recursion4.secondMax(new int[] {2,5,4,3,6}));
-        assertEquals(5, Recursion4.secondMax(new int[] {2,5,4,3,5}));
-        assertEquals(6, Recursion4.secondMax(new int[] {9,5,4,3,6}));
-        assertEquals(1, Recursion4.secondMax(new int[] {1,0,1,0,2,0,1,0}));
-        assertEquals(-2, Recursion4.secondMax(new int[] {-2,-5,-8,-3,0}));
-        assertEquals(1, Recursion4.secondMax(new int[] {1,2}));
-        assertEquals(1, Recursion4.secondMax(new int[] {1,1}));
+        assertEquals(5, Recursion4.getSecondValueMax(new int[] {2,5,4,3,6}));
+        assertEquals(5, Recursion4.getSecondValueMax(new int[] {2,5,4,3,5}));
+        assertEquals(6, Recursion4.getSecondValueMax(new int[] {9,5,4,3,6}));
+        assertEquals(1, Recursion4.getSecondValueMax(new int[] {1,0,1,0,2,0,1,0}));
+        assertEquals(-2, Recursion4.getSecondValueMax(new int[] {-2,-5,-8,-3,0}));
+        assertEquals(1, Recursion4.getSecondValueMax(new int[] {1,2}));
+        assertEquals(1, Recursion4.getSecondValueMax(new int[] {1,1}));
     }
 
     @Test
@@ -26,7 +26,7 @@ public class Recursion4Test {
         File root = new File(path);
         List<File> files = new ArrayList<>();
         List<File> expected = scanDir(path);
-        List<File> actual = Recursion4.listFiles(root,files);
+        List<File> actual = Recursion4.searchAllFilesInDirectory(root,files);
         Collections.sort(expected);
         Collections.sort(actual);
         assertEquals(expected,actual);

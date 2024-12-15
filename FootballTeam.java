@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class FootballTeam {
-    public static boolean Football(int F[], int N) {
+    public static boolean checkArrayInAscending(int F[], int N) {
         int[] FSort = Arrays.copyOf(F,N);
         Arrays.sort(FSort);
         if (Arrays.equals(FSort, F)) return false;

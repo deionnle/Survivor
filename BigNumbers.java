@@ -1,5 +1,5 @@
 public class BigNumbers {
-    public static String BigMinus(String s1, String s2) {
+    public static String getDifference(String s1, String s2) {
         String absoluteDifference = "";
         if (s1.equals(s2)) {
             return absoluteDifference = "0";

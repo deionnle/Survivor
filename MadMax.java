@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class MadMax {
-    public static int [] MadMax(int N, int [] Tele) {
+    public static int [] getImpulseArray(int N, int [] Tele) {
         int [] finalImpulse = new int[N];
         Arrays.sort(Tele);
         for (int i = 0; i < N; i ++) {

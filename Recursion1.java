@@ -8,11 +8,11 @@ public class Recursion1 {
         return n * getExponentiation(n, m - 1);
     }
 
-    public static int sumNumbers(int n) {
+    public static int getSumOfDigitsOfNumber(int n) {
         if (n < 10) {
             return n;
         }
-        return n % 10 + sumNumbers(n / 10);
+        return n % 10 + getSumOfDigitsOfNumber(n / 10);
     }
 
     public static int sumNumbers2(int n, int sum) {

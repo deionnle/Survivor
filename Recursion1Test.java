@@ -25,22 +25,22 @@ public class Recursion1Test {
 
     @Test
     public void sum1Test(){
-        assertEquals(1,Recursion1.sumNumbers(1));
+        assertEquals(1,Recursion1.getSumOfDigitsOfNumber(1));
     }
 
     @Test
     public void sum1432Test(){
-        assertEquals(10,Recursion1.sumNumbers(1432));
+        assertEquals(10,Recursion1.getSumOfDigitsOfNumber(1432));
     }
 
     @Test
     public void sum123456789Test(){
-        assertEquals(45,Recursion1.sumNumbers(123456789));
+        assertEquals(45,Recursion1.getSumOfDigitsOfNumber(123456789));
     }
 
     @Test
     public void bigSumTest(){
-        assertEquals(10,Recursion1.sumNumbers(1000000009));
+        assertEquals(10,Recursion1.getSumOfDigitsOfNumber(1000000009));
     }
 
     @Test

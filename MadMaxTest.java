@@ -26,7 +26,7 @@ public class MadMaxTest {
                 i ++;
             }
         }
-        assertArrayEquals(MadMax.MadMax(N,arr), MadMax.MadMax(N,arr));
+        assertArrayEquals(MadMax.getImpulseArray(N,arr), MadMax.getImpulseArray(N,arr));
     }
 
     @Test
@@ -34,27 +34,27 @@ public class MadMaxTest {
         int N = 13;
         int [] arr = new int[] {1,6,4,2,3,7,5,13,9,8,12,10,11};
         int [] arrSort = new int[] {1,2,3,4,5,6,13,12,11,10,9,8,7};
-        assertArrayEquals(arrSort, MadMax.MadMax(N, arr));
+        assertArrayEquals(arrSort, MadMax.getImpulseArray(N, arr));
     }
     @Test
     public void referenceTest() {
         int N = 7;
         int[] arr = new int[]{1,2,3,4,5,6,7};
         int[] arrSort = new int[]{1,2,3,7,6,5,4};
-        assertArrayEquals(arrSort, MadMax.MadMax(N, arr));
+        assertArrayEquals(arrSort, MadMax.getImpulseArray(N, arr));
     }
     @Test
     public void miniTest() {
         int N = 3;
         int[] arr = new int[]{3,2,1};
         int[] arrSort = new int[]{1,3,2};
-        assertArrayEquals(arrSort, MadMax.MadMax(N, arr));
+        assertArrayEquals(arrSort, MadMax.getImpulseArray(N, arr));
     }
     @Test
     public void oneNumTest() {
         int N = 1;
         int[] arr = new int[]{1};
         int[] arrSort = new int[]{1};
-        assertArrayEquals(arrSort, MadMax.MadMax(N, arr));
+        assertArrayEquals(arrSort, MadMax.getImpulseArray(N, arr));
     }
 }
