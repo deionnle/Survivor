@@ -2,12 +2,13 @@ import java.util.*;
 
 public class Matrix {
     public static String digital_rain(String col) {
+        final Character ZERO_BIT = '0';
         int difference = 0;
         int beginIndexOfSubstr = 0;
         int endIndexOfSubstr = 0;
         HashMap<Integer, Integer> StorageOfDifference = new HashMap<>();
         for (int i = 0; i < col.length(); i ++) {
-           if (col.charAt(i) == '0') {
+           if (col.charAt(i) == ZERO_BIT) {
                difference--;
            } else {
                difference++;

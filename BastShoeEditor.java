@@ -3,19 +3,25 @@ import java.util.*;
 public class BastShoeEditor {
     public static String returnCurrentString(String command) {
 
-        if (command.charAt(0) == '1') {
+        final Character ADD_LINE = '1';
+        final Character REMOVE_CHARS = '2';
+        final Character GIVE_CHAR = '3';
+        final String UNDO = "4";
+        final String REDO = "5";
+
+        if (command.charAt(0) == ADD_LINE) {
             return BastShoeEditor.add(command);
         }
-        if (command.charAt(0) == '2') {
+        if (command.charAt(0) == REMOVE_CHARS) {
             return BastShoeEditor.del(command);
         }
-        if (command.charAt(0) == '3') {
+        if (command.charAt(0) == GIVE_CHAR) {
             if ((Integer.parseInt(command.substring(2)) > stringBuffer.length() - 1)) {
                 return "";
             }
             return BastShoeEditor.iss(command);
         }
-        if (command.equals("4")) {
+        if (command.equals(UNDO)) {
             if (value.get(count).equals("1") || value.get(count).equals("2")) {
                 count--;
                 if (count < 0 && strAdd.size() == 1) {
@@ -32,7 +38,7 @@ public class BastShoeEditor {
             }
             return strAdd.get(count);
         }
-        if (command.equals("5")) {
+        if (command.equals(REDO)) {
             if (count != strAdd.size() - 1 && !value.get(count + 1).contains("4")) {
                 count ++;
             }

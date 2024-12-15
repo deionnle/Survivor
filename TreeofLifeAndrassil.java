@@ -2,12 +2,15 @@ import java.util.*;
 
 public class TreeofLifeAndrassil {
     public static String [] TreeOfLife(int H, int W, int N, String [] tree) {
+        final Character TREE_BRANCH = '+';
+        final Character DEAD_BRANCH = '.';
+
         int[][] matrix = new int[H][W];
 
         for (int i = 0; i < H; i ++) {
             String s = tree[i];
             for (int j = 0; j < W; j ++) {
-                if (s.charAt(j) == '.') {
+                if (s.charAt(j) == DEAD_BRANCH) {
                     matrix[i][j] = 0;
                 } else {
                     matrix[i][j] = 1;
@@ -25,9 +28,9 @@ public class TreeofLifeAndrassil {
             String s = "";
             for (int j = 0; j < W; j ++) {
                 if (matrix[i][j] == 0) {
-                    s += ".";
+                    s += DEAD_BRANCH;
                 } else {
-                    s += "+";
+                    s += TREE_BRANCH;
                 }
             }
             res[i] = s;
