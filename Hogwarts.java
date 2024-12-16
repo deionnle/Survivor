@@ -26,7 +26,7 @@ public class Hogwarts {
                 }
             }
         }
-        int len = fact(ch);
+        long len = fact(ch);
         if (count > 1 && count == count2) {
             len /= count;
         } else if (count2 > 1){
@@ -77,8 +77,8 @@ public class Hogwarts {
         return new int[]{n1, n2};
     }
 
-    public static int fact(char[] ch) {
-        int factorial = 1;
+    public static long fact(char[] ch) {
+        long factorial = 1;
         for (int i = 2; i <= ch.length; i++) {
             factorial *= i;
         }

@@ -1,38 +1,41 @@
 import java.util.*;
 
 public class WhiteWalkers {
+    private static final int TARGET_SUM = 10;
+    private static final int REQUIRED_EQUALS = 3;
+
     public static boolean white_walkers(String village) {
         if (village.length() == 0) {
             return false;
         }
-        ArrayList<Integer> values = new ArrayList<>();
+        ArrayList<Integer> digitIndexes = new ArrayList<>();
         for (int i = 0; i < village.length(); i ++) {
-            if (village.charAt(i) >= 48 && village.charAt(i) <= 57) {
-                values.add(i);
+            if (Character.isDigit(village.charAt(i))) {
+                digitIndexes.add(i);
             }
         }
-        if (values.size() == 1) {
+        if (digitIndexes.size() == 1) {
             return false;
         }
-        int sumOfTwoNumbers10 = 0;
-        for (int i = 0; i < values.size() - 1; i ++) {
-            String s = village.substring(values.get(i), values.get(i + 1) + 1);
-            int first = Integer.parseInt(Character.toString(s.charAt(0)));
-            int last = Integer.parseInt(Character.toString(s.charAt(s.length() - 1)));
+        int validPairs = 0;
+        for (int i = 0; i < digitIndexes.size() - 1; i ++) {
+            String s = village.substring(digitIndexes.get(i), digitIndexes.get(i + 1) + 1);
+            int first = Character.getNumericValue(village.charAt(digitIndexes.get(i)));
+            int last = Character.getNumericValue(village.charAt(digitIndexes.get(i + 1)));
             int count = 0;
             for (int j = 0; j < s.length(); j ++) {
                 if (first + last == 10 && s.charAt(j) == '=') {
                     count ++;
                 }
             }
-            if (first + last == 10 && count != 3) {
+            if (first + last == TARGET_SUM && count != REQUIRED_EQUALS) {
                 return false;
             }
-            if (first + last == 10) {
-                sumOfTwoNumbers10++;
+            if (first + last == TARGET_SUM) {
+                validPairs++;
             }
         }
-        if (sumOfTwoNumbers10 > 0) {
+        if (validPairs > 0) {
             return true;
         }
         return false;

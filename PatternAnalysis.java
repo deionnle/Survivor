@@ -1,32 +1,39 @@
-import java.util.*;
-
 public class PatternAnalysis {
+
+    private static final Character STAR = '*';
+    private static final Character DOT = '.';
+
     public static boolean LineAnalysis(String line) {
-        int count = 0;
-        if (line.charAt(0) != '*' || line.charAt(line.length()-1) != '*') {
+
+        if (line == null || line.isEmpty()) {
             return false;
         }
-        if (!line.contains(".")) {
+
+        if (line.charAt(0) != STAR && line.charAt(line.length()-1) != STAR) {
+            return false;
+        }
+        if (!line.contains(String.valueOf(DOT))) {
             return true;
         }
+        int dotLenght = 0;
         for (int i = 1; i < line.length(); i ++) {
-            if (line.charAt(i) == '*') {
+            if (line.charAt(i) == STAR) {
                 break;
-            } else {
-                count ++;
             }
+                dotLenght++;
         }
+
         String l = line;
-        for (int i = 0; i < line.length() / (count + 1); i ++) {
-            for (int j = 1; j <= count; j ++) {
-                if (l.charAt(j) != '.') {
+        for (int i = 0; i < line.length() / (dotLenght + 1); i ++) {
+            for (int j = 1; j <= dotLenght; j ++) {
+                if (l.charAt(j) != DOT) {
                     return false;
                 }
             }
-            if (l.charAt(count + 1) != '*') {
+            if (l.charAt(dotLenght + 1) != STAR) {
                 return false;
             }
-            l = l.substring(count + 1);
+            l = l.substring(dotLenght + 1);
         }
         return true ;
     }

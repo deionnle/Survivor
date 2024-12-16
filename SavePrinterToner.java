@@ -36,10 +36,11 @@ public class SavePrinterToner {
         symbolASCII.put('a', 23); symbolASCII.put('g', 30); symbolASCII.put('m', 22);
         symbolASCII.put('s', 21); symbolASCII.put('y', 24);
 
+        final int COSTS_FOR_UNKNOWN_SYMBOL = 23;
         int res = 0;
         for (int i = 0; i < Line.length(); i ++) {
             if (!symbolASCII.containsKey(Line.charAt(i))) {
-                res += 23;
+                res += COSTS_FOR_UNKNOWN_SYMBOL;
                 continue;
             }
             for (Character ch: symbolASCII.keySet()) {

@@ -1,11 +1,13 @@
 public class Cyberpunk1995 {
+
+    private static final String DEFAULT_RESULT = "0 0 2";
+
     public static String army_communication_matrix(int n, int [][] matrix) {
-        String str = "0 0 2";
         if (n == 2) {
-            return str;
+            return DEFAULT_RESULT;
         }
         int sum = 0;
-        return subMatrix(str, sum, 2, n, matrix);
+        return subMatrix(DEFAULT_RESULT, sum, 2, n, matrix);
     }
 
     public static String subMatrix(String str,int sum, int m, int n, int[][] matrix) {
@@ -20,7 +22,8 @@ public class Cyberpunk1995 {
                         res += matrix[i][j];
                     }
                 }
-                if (x == 0 && y == 0 && m == 2) {
+                boolean isFirstIteration = (x == 0 && y == 0 && m == 2);
+                if (isFirstIteration) {
                     sum = res;
                     str = y + " " + x + " " + m;
                 }

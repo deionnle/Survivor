@@ -1,7 +1,9 @@
 public class KeyMaster {
+
+    private static final int CLOSED_DOOR = 0;
+    private static final int OPEN_DOOR = 1;
+
     public static String Keymaker(int k) {
-        final int CLOSED_DOOR = 0;
-        final int OPEN_DOOR = 1;
 
         int[] doors = new int[k];
         for (int i = 0; i < k; i ++) {

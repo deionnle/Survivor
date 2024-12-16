@@ -2,17 +2,25 @@ import java.util.*;
 
 public class Voting {
     public static String getVotingResult(int N, int [] Votes) {
-        double total = Arrays.stream(Votes).sum();
-        double[] vot = new double[N];
-        for (int i = 0; i < vot.length; i ++) {
-            double res = Votes[i] / total;
-            vot[i] = Math.ceil(res * 100000) / 1000;
+        if (Votes == null || Votes.length != N || N == 0) {
+            throw new IllegalArgumentException("Invalid input data");
         }
-        double max = Arrays.stream(vot).max().getAsDouble();
+
+        int totalNumbersOfVotes = Arrays.stream(Votes).sum();
+        if (totalNumbersOfVotes == 0) {
+            return "no winner";
+        }
+
+        double[] candidateVotingResult = new double[N];
+        for (int i = 0; i < candidateVotingResult.length; i ++) {
+            double res = Votes[i] / (double) totalNumbersOfVotes;
+            candidateVotingResult[i] = Math.ceil(res * 100000) / 1000;
+        }
+        double max = Arrays.stream(candidateVotingResult).max().getAsDouble();
         int n = 0;
         int K = 0;
-        for (int i = 0; i < vot.length; i ++) {
-            if (vot[i] == max) {
+        for (int i = 0; i < candidateVotingResult.length; i ++) {
+            if (candidateVotingResult[i] == max) {
                 n ++;
                 K = i + 1;
             }

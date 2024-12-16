@@ -56,7 +56,7 @@ public class VotingTest {
     @Test
     public void bigTest () {
         int N = 10;
-        int[] votes = {20, 30, 40, 50, 65, 80, 25, 70, 19, 80, 50};
+        int[] votes = {30, 40, 50, 65, 80, 25, 70, 19, 80, 50};
         assertEquals("no winner",Voting.getVotingResult(N,votes));
     }
 

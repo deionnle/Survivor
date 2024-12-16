@@ -1,8 +1,9 @@
 import java.util.*;
 
 public class Matrix {
-    public static String digital_rain(String col) {
-        final Character ZERO_BIT = '0';
+    private static final char ZERO_BIT = '0';
+
+    public static String digital_rain(String col) {;
         int difference = 0;
         int beginIndexOfSubstr = 0;
         int endIndexOfSubstr = 0;

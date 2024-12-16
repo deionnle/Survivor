@@ -1,33 +1,33 @@
 public class TrafficOptimization {
     public static int getTotalTime(int L, int N, int[][] track) {
-        int index = 0;
+        int timeAfterStart = 0;
         int dist = 0;
         for (int i = 1; i <= L; i ++) {
             dist++;
-            if (index < N && i == track[index][0]) {
-                dist += getDistance(index, dist, track);
-                index++;
+            if (timeAfterStart < N && i == track[timeAfterStart][0]) {
+                dist += getDistance(timeAfterStart, dist, track);
+                timeAfterStart++;
             }
         }
         return dist;
     }
     public static int getDistance(int index, int dist, int[][] track) {
-        int red = track[index][1];
-        int green = track[index][2];
+        int redTrafficLightTime = track[index][1];
+        int greenTrafficLightTime = track[index][2];
         while (dist > 0) {
-            if (dist - red <= 0) {
-                dist = red - dist;
+            if (dist - redTrafficLightTime <= 0) {
+                dist = redTrafficLightTime - dist;
                 break;
             }
-            if (dist - red > 0) {
-                dist -= red;
+            if (dist - redTrafficLightTime > 0) {
+                dist -= redTrafficLightTime;
             }
-            if (dist < green) {
+            if (dist < greenTrafficLightTime) {
                 dist = 0;
                 break;
             }
-            if (dist - green > 0) {
-                dist -= green;
+            if (dist - greenTrafficLightTime > 0) {
+                dist -= greenTrafficLightTime;
             }
         }
         return dist;

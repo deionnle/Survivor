@@ -1,14 +1,18 @@
 import java.util.*;
 
 public class MissionImpossible {
+    private static final String SPACE = " ";
+    private static final String NO_SPACE = "";
+    private static final double EPSILON = 1e-9;
+
     public static String TheRabbitsFoot(String s, boolean encode) {
-        String s1 = s.replaceAll(" ", "");
-        String res = "";
+        String s1 = s.replaceAll(SPACE, NO_SPACE);
+        StringBuilder res = new StringBuilder(NO_SPACE);
         int len = s1.length();
         double sq = Math.sqrt(len);
         int n = (int) sq;
         int m;
-        if (sq % n == 0) {
+        if (Math.abs(sq - n) < EPSILON) {
             m = n;
         } else {
             m = n + 1;
@@ -21,24 +25,24 @@ public class MissionImpossible {
             for (int i = 0; i < n; i++) {
                 list.add(s1.substring(0, m));
                 s1 = s1.substring(m);
-                if (s1.length() < m && s1.length() > 0) {
+                boolean isSubstring = s1.length() < m && s1.length() > 0;
+                if (isSubstring) {
                     list.add(s1);
                     break;
                 }
             }
             for (int i = 0; i < list.get(0).length(); i ++) {
                 if (i > 0) {
-                    res += " ";
+                    res.append(SPACE);
                 }
                 for (String r : list) {
                     if (i >= r.length()) {
                         continue;
                     }
-                    res += r.charAt(i);
+                    res.append(r.charAt(i));
                 }
             }
-        }
-        if (!encode) {
+        } else {
                 ArrayList<String> list = new ArrayList<>();
                 int n1 = (int) sq;
                 for (int i = 0; i < n; i++) {
@@ -63,11 +67,11 @@ public class MissionImpossible {
                         if (i >= r.length()) {
                             continue;
                         }
-                        res += r.charAt(i);
+                        res.append(r.charAt(i));
                     }
                 }
         }
-        return res;
+        return res.toString();
     }
 }
 
