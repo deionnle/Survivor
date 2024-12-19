@@ -2,9 +2,9 @@ import java.util.*;
 
 public class MaxDiscount {
     public static int getMaxDiscount(int N, int [] price) {
-        int discount = 0;
         Arrays.sort(price);
         price = getTurnArray(price);
+        int discount = 0;
         for (int i = 2; i < N; i += 3) {
             discount += price[i];
         }

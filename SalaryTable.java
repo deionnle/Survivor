@@ -3,6 +3,9 @@ import java.util.HashMap;
 
 public class SalaryTable {
     public static int [] SynchronizingTables(int N, int [] ids, int [] salary) {
+        if (ids == null || salary == null || ids.length != salary.length || N <= 0) {
+            throw new IllegalArgumentException("Некорректные входные данные");
+        }
         int [] idsSort = new int[N];
         System.arraycopy(ids, 0, idsSort, 0, N);
         Arrays.sort(idsSort);

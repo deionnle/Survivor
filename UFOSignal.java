@@ -1,5 +1,3 @@
-import java.util.*;
-
 public class UFOSignal {
     public static int [] UFO(int N, int [] data, boolean octal) {
         final int OCTAL_SYSTEM = 8;

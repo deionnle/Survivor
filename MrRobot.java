@@ -17,10 +17,9 @@ public class MrRobot {
             if (data[i] > data[i -1] && data[i] > data[i - 2]) {
                 continue;
             }
-            int val = 0;
             while (data[i] < data[i - 1] || data[i] < data[i - 2]){
-                val = data[i -2]; data[i - 2] = data[i - 1];
-                data[i - 1] = data[i]; data[i] = val;
+                int currentValue = data[i -2]; data[i - 2] = data[i - 1];
+                data[i - 1] = data[i]; data[i] = currentValue;
             }
         }
         return data;

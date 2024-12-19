@@ -1,9 +1,20 @@
 import java.util.*;
 
 public class TreeofLifeAndrassil {
+
+    private static final Character TREE_BRANCH = '+';
+    private static final Character DEAD_BRANCH = '.';
+
     public static String [] TreeOfLife(int H, int W, int N, String [] tree) {
-        final Character TREE_BRANCH = '+';
-        final Character DEAD_BRANCH = '.';
+
+        if (tree.length != H) {
+            throw new IllegalArgumentException("Неверное значение количества строк H");
+        }
+        for (String row : tree) {
+            if (row.length() != W) {
+                throw new IllegalArgumentException("Неверное значение длины строк W");
+            }
+        }
 
         int[][] matrix = new int[H][W];
 

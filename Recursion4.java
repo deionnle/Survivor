@@ -3,8 +3,8 @@ import java.util.*;
 
 public class Recursion4 {
     public static int getSecondValueMax(int[] arr) {
-        int max = 0;
-        int premax = 0;
+        int max;
+        int premax;
         if (arr[0] > arr[1]) {
             max = arr[0];
             premax = arr[1];

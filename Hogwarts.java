@@ -2,8 +2,6 @@ import java.util.*;
 
 public class Hogwarts {
     public static String BiggerGreater(String input) {
-        ArrayList<String> str = new ArrayList<>();
-        ArrayList<String> strNo = new ArrayList<>();
         StringBuffer stringBuffer = new StringBuffer();
         stringBuffer.append(input);
         char[] ch = input.toCharArray();
@@ -32,6 +30,9 @@ public class Hogwarts {
         } else if (count2 > 1){
             len /= count2;
         }
+        ArrayList<String> str = new ArrayList<>();
+        ArrayList<String> strNo = new ArrayList<>();
+
         while (str.size() + strNo.size() != len) {
             boolean b = true;
             int[] rand = randomizer(ch);

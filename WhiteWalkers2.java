@@ -13,7 +13,7 @@ public class WhiteWalkers2 {
         String s = "";
         String s1 = "";
         for (int i = 0; i < village.length(); i ++) {
-            if (village.charAt(i) >= 48 && village.charAt(i) <= 57) {
+            if (Character.isDigit(village.charAt(i))) {
                 values.add(i);
             }
             if (values.size() == 2) {

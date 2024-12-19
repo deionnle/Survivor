@@ -24,7 +24,7 @@ public class WhiteWalkers {
             int last = Character.getNumericValue(village.charAt(digitIndexes.get(i + 1)));
             int count = 0;
             for (int j = 0; j < s.length(); j ++) {
-                if (first + last == 10 && s.charAt(j) == '=') {
+                if (first + last == TARGET_SUM && s.charAt(j) == '=') {
                     count ++;
                 }
             }
