@@ -1,22 +1,27 @@
 public class UFOSignal {
     public static int [] UFO(int N, int [] data, boolean octal) {
-        final int OCTAL_SYSTEM = 8;
-        final int HEXADECIMAL_SYSTEM = 16;
-        int currentSystem;
-        if (octal == true) {
-            currentSystem = OCTAL_SYSTEM;
-        } else {
-            currentSystem = HEXADECIMAL_SYSTEM;
-        }
+
+        int currentSystem = getCurrentSystem(octal);
         int[] value = new int[N];
-        for (int i = 0; i < N; i ++) {
-            int len = String.valueOf(data[i]).length();
-            for (int j = 0; j < len; j ++) {
-                value[i] += (data[i] % 10) * Math.pow(currentSystem, j);
-                data[i] /= 10;
-            }
+        for (int i = 0; i < N; i++) {
+            value[i] = convertToDecimal(data[i], currentSystem);
         }
         return value;
+    }
+        private static int getCurrentSystem(boolean octal) {
+            final int OCTAL_SYSTEM = 8;
+            final int HEXADECIMAL_SYSTEM = 16;
+            return octal ? OCTAL_SYSTEM : HEXADECIMAL_SYSTEM;
+        }
+
+    private static int convertToDecimal(int number, int currentSystem) {
+        int result = 0;
+        int len = String.valueOf(number).length();
+        for (int j = 0; j < len; j++) {
+            result += (number % 10) * Math.pow(currentSystem, j);
+            number /= 10;
+        }
+        return result;
     }
 }
 
