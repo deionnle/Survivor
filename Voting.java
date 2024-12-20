@@ -11,27 +11,43 @@ public class Voting {
             return "no winner";
         }
 
+        double[] candidateVotingResult = calculateVotingResults(N, Votes, totalNumbersOfVotes);
+        double max = Arrays.stream(candidateVotingResult).max().getAsDouble();
+        int winnerIndex = findWinner(candidateVotingResult, max);
+
+        if (winnerIndex == -1) {
+            return "no winner";
+        }
+
+        return getVictoryType(candidateVotingResult, winnerIndex, max);
+    }
+
+    private static double[] calculateVotingResults(int N, int[] Votes, int totalNumbersOfVotes) {
         double[] candidateVotingResult = new double[N];
-        for (int i = 0; i < candidateVotingResult.length; i ++) {
+        for (int i = 0; i < N; i++) {
             double res = Votes[i] / (double) totalNumbersOfVotes;
             candidateVotingResult[i] = Math.ceil(res * 100000) / 1000;
         }
-        double max = Arrays.stream(candidateVotingResult).max().getAsDouble();
-        int n = 0;
-        int K = 0;
-        for (int i = 0; i < candidateVotingResult.length; i ++) {
+        return candidateVotingResult;
+    }
+
+    private static int findWinner(double[] candidateVotingResult, double max) {
+        int count = 0;
+        int winnerIndex = -1;
+        for (int i = 0; i < candidateVotingResult.length; i++) {
             if (candidateVotingResult[i] == max) {
-                n ++;
-                K = i + 1;
+                count++;
+                winnerIndex = i + 1;
             }
         }
-        if (n > 1) {
-            return "no winner";
-        }
+        return count > 1 ? -1 : winnerIndex;
+    }
+
+    private static String getVictoryType(double[] candidateVotingResult, int winnerIndex, double max) {
         if (max > 50.0) {
-            return ("majority winner " + K);
+            return "majority winner " + winnerIndex;
         }
-        return ("minority winner " + K);
+        return "minority winner " + winnerIndex;
     }
 }
 
