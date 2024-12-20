@@ -12,14 +12,14 @@ public class Voting {
         }
 
         double[] candidateVotingResult = calculateVotingResults(N, Votes, totalNumbersOfVotes);
-        double max = Arrays.stream(candidateVotingResult).max().getAsDouble();
-        int winnerIndex = findWinner(candidateVotingResult, max);
+        double resultValueMax = Arrays.stream(candidateVotingResult).max().getAsDouble();
+        int winnerIndex = findWinner(candidateVotingResult, resultValueMax);
 
         if (winnerIndex == -1) {
             return "no winner";
         }
 
-        return getVictoryType(candidateVotingResult, winnerIndex, max);
+        return getVictoryType(candidateVotingResult, winnerIndex, resultValueMax);
     }
 
     private static double[] calculateVotingResults(int N, int[] Votes, int totalNumbersOfVotes) {
