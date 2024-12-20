@@ -2,49 +2,51 @@ import java.util.*;
 
 public class SherlockHolmes {
     public static boolean SherlockValidString(String s) {
+        HashMap<Character, Integer> countMap = buildFrequencyMap(s);
+
+        if (checkEqualFrequency(countMap)) {
+            return true;
+        }
+
+        for (int i = 0; i < s.length(); i++) {
+            if (checkAfterRemoval(s, i, countMap)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private static HashMap<Character, Integer> buildFrequencyMap(String s) {
         HashMap<Character, Integer> countMap = new HashMap<>();
-        for (int i = 0; i < s.length(); i ++) {
-            if (countMap.containsKey(s.charAt(i))) {
-                int val = countMap.get(s.charAt(i));
-                countMap.put(s.charAt(i), val + 1);
-            } else {
-                countMap.put(s.charAt(i), 1);
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            countMap.put(ch, countMap.getOrDefault(ch, 0) + 1);
+        }
+        return countMap;
+    }
+
+    private static boolean checkEqualFrequency(HashMap<Character, Integer> countMap) {
+        int firstValue = -1;
+        for (int count : countMap.values()) {
+            if (firstValue == -1) {
+                firstValue = count;
+            } else if (firstValue != count) {
+                return false;
             }
         }
-        int count = 0;
-        for (int j : countMap.values()) {
-            if (j == countMap.get(s.charAt(0))) {
-                count ++;
-            }
-            if (count == countMap.size()) {
-                return true;
-            }
+        return true;
+    }
+
+    private static boolean checkAfterRemoval(String s, int indexToRemove, HashMap<Character, Integer> countMap) {
+        HashMap<Character, Integer> delValue = new HashMap<>(countMap);
+        char ch = s.charAt(indexToRemove);
+        int val = delValue.get(ch);
+        delValue.put(ch, val - 1);
+
+        if (delValue.get(ch) == 0) {
+            delValue.remove(ch);
         }
-        for (int i = 0; i < s.length(); i ++) {
-            HashMap<Character, Integer> delValue = (HashMap<Character, Integer>) countMap.clone();
-            int val = delValue.get(s.charAt(i));
-            count = 0;
-            delValue.put(s.charAt(i), val - 1);
-            for (char j : delValue.keySet()) {
-                if (delValue.get(j) == 0) {
-                    delValue.remove(j);
-                    break;
-                }
-            }
-            ArrayList<Integer> valueList = new ArrayList<>();
-            for (int k : delValue.values()) {
-                valueList.add(k);
-            }
-            for (int n : valueList) {
-                if (valueList.get(0) == n) {
-                    count ++;
-                }
-            }
-            if (count == valueList.size()) {
-                return true;
-            }
-        }
-        return false ;
+        return checkEqualFrequency(delValue);
     }
 }
 
