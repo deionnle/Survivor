@@ -1,13 +1,22 @@
 public class Squirrel {
     public static int getFirstDigitOfFactorial(int N) {
+        int factorial = calculateFactorial(N);
+        return extractFirstDigit(factorial);
+    }
+
+    private static int calculateFactorial(int N) {
         int factorial = 1;
-        for (int i = 2; i <= N; i ++) {
+        for (int i = 2; i <= N; i++) {
             factorial *= i;
         }
-        while (factorial > 10) {
-            factorial /= 10;
-        }
         return factorial;
+    }
+
+    private static int extractFirstDigit(int number) {
+        while (number > 10) {
+            number /= 10;
+        }
+        return number;
     }
 }
 
