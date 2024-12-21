@@ -8,9 +8,9 @@ public class SumNumbers {
 
 
     private static int findMatchingElement(int[] data, int total) {
-        for (int i = 0; i < data.length; i++) {
-            if (data[i] == total - data[i]) {
-                return data[i];
+        for (int value : data) {
+            if (value == total - value) {
+                return value;
             }
         }
         return 0;

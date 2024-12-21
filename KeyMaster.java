@@ -16,8 +16,8 @@ public class KeyMaster {
             }
         }
         StringBuilder res = new StringBuilder();
-        for (int i = 0; i < k; i ++) {
-            res.append(doors[i]);
+        for (int door : doors) {
+            res.append(door);
         }
         return res.toString();
     }

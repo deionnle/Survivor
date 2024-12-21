@@ -40,17 +40,8 @@ public class SavePrinterToner {
         symbolASCII.put('s', 21); symbolASCII.put('y', 24);
 
         int res = 0;
-        for (int i = 0; i < Line.length(); i ++) {
-            if (!symbolASCII.containsKey(Line.charAt(i))) {
-                res += COSTS_FOR_UNKNOWN_SYMBOL;
-                continue;
-            }
-            for (Character ch: symbolASCII.keySet()) {
-                if (ch == Line.charAt(i)) {
-                    res += symbolASCII.get(ch);
-                    break;
-                }
-            }
+        for (char ch : Line.toCharArray()) {
+            res += symbolASCII.getOrDefault(ch, COSTS_FOR_UNKNOWN_SYMBOL);
         }
         return res;
     }

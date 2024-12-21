@@ -18,9 +18,9 @@ public class SalaryTable {
 
         int [] result = new int[N];
         for (int i = 0; i < N; i ++) {
-            for (Integer j : salaryIdsList.keySet()) {
-                if (j == ids[i]) {
-                    result[i] = salaryIdsList.get(j);
+            for (Integer key : salaryIdsList.keySet()) {
+                if (key == ids[i]) {
+                    result[i] = salaryIdsList.get(key);
                     break;
                 }
             }
