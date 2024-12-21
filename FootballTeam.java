@@ -6,6 +6,7 @@ public class FootballTeam {
         Arrays.sort(FSort);
         if (Arrays.equals(FSort, F)) return false;
 
+        // Проверяем возможность упорядочить массив, поменяв местами два элемента
         for (int i = 0; i < N - 1; i ++) {
             for (int j = i + 1; j < N; j ++) {
                 int[] originalNumberOrder = Arrays.copyOf(F,N);
@@ -16,6 +17,7 @@ public class FootballTeam {
             }
         }
 
+        // Проверяем возможность упорядочить массив, изменив порядок последовательной цепочки
         for (int i = 0; i < N - 2; i ++) {
             for (int j = i + 3; j < N; j ++) {
                 int[] originalNumberOrder = Arrays.copyOf(F,N);

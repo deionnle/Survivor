@@ -14,6 +14,7 @@ public class Matrix {
            } else {
                difference++;
            }
+           // Если разность уже встречалась, проверяем длину подстроки
            if (StorageOfDifference.containsKey(difference) && i - StorageOfDifference.get(difference) > endIndexOfSubstr - 1) {
                endIndexOfSubstr = i - StorageOfDifference.get(difference);
                beginIndexOfSubstr = StorageOfDifference.get(difference) + 1;

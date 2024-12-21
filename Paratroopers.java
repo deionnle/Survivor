@@ -1,6 +1,8 @@
 public class Paratroopers {
     public static int ConquestCampaign(int N, int M, int L, int[] battalion) {
         int[][] platz = new int[N][M];
+
+        // Установка начальных позиций высадки десантников
         for (int i = 0; i < L * 2 - 1; i += 2) {
             int x = battalion[i] - 1;
             int y = battalion[i + 1] - 1;

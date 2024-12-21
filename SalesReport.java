@@ -5,6 +5,7 @@ public class SalesReport {
         if (N < 1 || items == null || items.length != N) {
             throw new IllegalArgumentException("Некорректные входные данные");
         }
+        // Создаём HashMap для хранения общего количества продаж каждого товара
         HashMap<String, Integer> shopList = new HashMap<>();
         for (int i = 0; i < N; i ++) {
             String[] splitStr = items[i].split(" ");
@@ -23,8 +24,10 @@ public class SalesReport {
         for (String i : shopList.keySet()) {
             str.add(i);
         }
+
         str.sort(Comparator.naturalOrder());
         nums.sort(Comparator.reverseOrder());
+
         String[] salesSummary = new String[shopList.size()];
         int count = str.size();
         for (int i = 0; i < nums.size(); i ++) {

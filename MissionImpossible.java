@@ -22,6 +22,7 @@ public class MissionImpossible {
         StringBuilder summaryLine = new StringBuilder(NO_SPACE);
         if (encode) {
             ArrayList<String> list = new ArrayList<>();
+            // Разбиваем строку на подстроки длиной m и добавляем в список
             for (int i = 0; i < n; i++) {
                 list.add(s1.substring(0, m));
                 s1 = s1.substring(m);
@@ -31,6 +32,7 @@ public class MissionImpossible {
                     break;
                 }
             }
+            // Формируем зашифрованный текст, перебирая столбцы
             for (int i = 0; i < list.get(0).length(); i ++) {
                 if (i > 0) {
                     summaryLine.append(SPACE);
@@ -45,6 +47,7 @@ public class MissionImpossible {
         } else {
                 ArrayList<String> list = new ArrayList<>();
                 int n1 = (int) sq;
+            // Разбиваем строку на подстроки, исходя из размеров матрицы
                 for (int i = 0; i < n; i++) {
                     if (i < (len - (n1 * m))) {
                         list.add(s1.substring(0, m));
@@ -62,6 +65,7 @@ public class MissionImpossible {
                         break;
                     }
                 }
+            // Формируем расшифрованный текст, перебирая строки
                 for (int i = 0; i < list.size(); i ++) {
                     for (String r : list) {
                         if (i >= r.length()) {
