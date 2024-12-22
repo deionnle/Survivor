@@ -2,17 +2,17 @@ import java.util.*;
 
 public class TreeofLifeAndrassil {
 
-    // Инициализация живых и мёртвых ветвей дерева
+    // Символы для обозначения живых (+) и мёртвых (.) ветвей дерева
     private static final Character TREE_BRANCH = '+';
     private static final Character DEAD_BRANCH = '.';
 
     public static String [] TreeOfLife(int H, int W, int N, String [] tree) {
 
-        // Проверка высоты дерева
+        // Проверка соответствия количества строк дерева заданной высоте H
         if (tree.length != H) {
             throw new IllegalArgumentException("Неверное значение количества строк H");
         }
-        // Проверка ширины дерева
+        // Проверка, что каждая строка дерева имеет длину W
         for (String row : tree) {
             if (row.length() != W) {
                 throw new IllegalArgumentException("Неверное значение длины строк W");
@@ -21,7 +21,6 @@ public class TreeofLifeAndrassil {
 
         int[][] matrix = new int[H][W];
 
-        // Заполняем массив: живая ветвь —  1, мертвая — 0
         for (int i = 0; i < H; i ++) {
             String s = tree[i];
             for (int j = 0; j < W; j ++) {
@@ -32,14 +31,14 @@ public class TreeofLifeAndrassil {
                 }
             }
         }
-        // Запускаем обновления дерева
+        // Обновляем состояние дерева в N циклах роста и удаления
         for (int i = 0; i < N; i ++) {
-            getMatrix(matrix);
+            updateBranchAge(matrix);
             if (i % 2 == 1) {
-                delMatrix(matrix); // Если нечётный цикл, удаляем старые ветви
+                removeDeadBranches(matrix);
             }
         }
-        // Преобразуем матрицу обратно в строковый массив
+
         String[] res = new String[H];
         for (int i = 0; i < H; i ++) {
             String s = "";
@@ -50,13 +49,12 @@ public class TreeofLifeAndrassil {
                     s += TREE_BRANCH;
                 }
             }
-            res[i] = s; // Добавляем строку в результирующий массив
+            res[i] = s;
         }
         return res;
     }
 
-    // Увеличиваем возраст каждой ветки дерева
-    public static int[][] getMatrix(int[][] matrix) {
+    public static int[][] updateBranchAge(int[][] matrix) {
         for (int i = 0; i < matrix.length; i ++) {
             for (int j = 0; j < matrix[i].length; j ++) {
                     matrix[i][j] ++;
@@ -65,8 +63,7 @@ public class TreeofLifeAndrassil {
         return matrix;
     }
 
-    // Удаляем старые ветви дерева
-    public static int[][] delMatrix(int[][] matrix) {
+    public static int[][] removeDeadBranches(int[][] matrix) {
         ArrayList<String> value = new ArrayList<>();
         for (int i = 0; i < matrix.length; i ++) {
             for (int j = 0; j < matrix[i].length; j ++) {
@@ -74,13 +71,12 @@ public class TreeofLifeAndrassil {
                     value.add(i + " " + j); // Сохраняем строку и столбец ветви
             }
         }
-        // Удаляем ветви по координатам
+
         for (int i = 0; i < value.size(); i ++) {
             String s = value.get(i);
             int h = Integer.parseInt(s.substring(0,1));
             int w = Integer.parseInt(s.substring(2));
             matrix[h][w] = 0;
-            // Удаляем соседние ветви
             if (h - 1 >= 0) {
                 matrix[h - 1][w] = 0;
             }
