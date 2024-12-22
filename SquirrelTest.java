@@ -3,6 +3,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class SquirrelTest {
 
+    // не передавайте аргументом слишком большие числа
     @Test
     public void equalsTest () {
         assertEquals(Squirrel.getFirstDigitOfFactorial(7), 5);

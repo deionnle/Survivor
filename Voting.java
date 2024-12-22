@@ -26,7 +26,7 @@ public class Voting {
         double[] candidateVotingResult = new double[N];
         for (int i = 0; i < N; i++) {
             double res = Votes[i] / (double) totalNumbersOfVotes;
-            candidateVotingResult[i] = Math.ceil(res * 100000) / 1000;
+            candidateVotingResult[i] = Math.ceil(res * 100000) / 1000; // точность результата округляется до трёх знаков после запятой.
         }
         return candidateVotingResult;
     }

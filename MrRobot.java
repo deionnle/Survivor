@@ -1,6 +1,11 @@
 import java.util.*;
 
 public class MrRobot {
+
+    /*
+    Функция получает размер массива N и сам массив, и возвращает true если можно отсортировать массив,
+    используя круговой сдвиг трех подряд элементов влево произвольное количество раз.
+    */
     public static boolean MisterRobot(int N, int [] data) {
         int[] ascendingOrder = Arrays.copyOf(data, data.length);
         Arrays.sort(ascendingOrder);

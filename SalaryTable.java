@@ -2,6 +2,13 @@ import java.util.*;
 import java.util.HashMap;
 
 public class SalaryTable {
+
+    /*
+    Функция получает параметром N длину обоих массивов. Параметр ids - массив, содержащий номера сотрудников,
+    параметр salary - массив, содержащий зарплаты.
+    Возвращает функция массив, содержащий переупорядоченные зарплаты.
+    */
+
     public static int [] SynchronizingTables(int N, int [] ids, int [] salary) {
         if (ids == null || salary == null || ids.length != salary.length || N <= 0) {
             throw new IllegalArgumentException("Некорректные входные данные");

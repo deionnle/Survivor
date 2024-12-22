@@ -8,6 +8,10 @@ public class Cyberpunk1994 {
       int colMax = m - 1;
       int[] out = new int[max];
 
+      /*
+      мы формируем одномерный массив, содержащий элементы
+      входной матрицы, в порядке обходя по спирали, начиная с левого верхнего угла.
+      */
       while (num < max) {
          for (int i = rowMin; num < max && i <= rowMax; i++) {
             out[num++] = matrix[rowMin][i];

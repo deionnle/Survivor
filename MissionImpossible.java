@@ -5,7 +5,12 @@ public class MissionImpossible {
     private static final String NO_SPACE = "";
     private static final double EPSILON = 1e-9;
 
+    /*
+    Функция получает исходную строку s и либо зашифровывает её (encode = true),
+    либо расшифровывает (encode = false), без исходных пробелов.
+    */
     public static String TheRabbitsFoot(String s, boolean encode) {
+
         String s1 = s.replaceAll(SPACE, NO_SPACE);
         int len = s1.length();
         double sq = Math.sqrt(len);

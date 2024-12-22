@@ -33,6 +33,10 @@ public class PhoneUnlock {
                 }
             }
         }
+        /*
+        Длину линии, рисуемой в процессе взлома кода, требуется округлить до пятого знака,
+        убрать запятую и удалить нули.
+         */
         return String.format("%.5f", unlockLineLength).replaceAll("[,0.]","");
     }
 }

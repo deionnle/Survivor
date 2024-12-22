@@ -22,6 +22,10 @@ public class Matrix {
            StorageOfDifference.putIfAbsent(difference, i);
         }
         if (difference == 0) return col;
+        /*
+        Возвращает функция наибольшую подстроку в строке col, в которой одинаковое количество 1 и 0,
+        или пустую строку "", если таковой не нашлось.
+         */
         return col.substring(beginIndexOfSubstr, beginIndexOfSubstr + endIndexOfSubstr);
     }
 }

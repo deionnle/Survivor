@@ -1,6 +1,12 @@
 import java.util.*;
 
 public class SearchWord {
+    /*
+    Функция получает параметром len ширину выравнивания, саму строку в параметре s,
+     и проверяемое слово в параметре subs.
+     Возвращает функция массив целых чисел, содержащий 1 или 0
+     (признаки нахождения слова в соответствующей строке).
+     */
     public static int [] WordSearch(int len, String s, String subs) {
         int count = 0;
         int endIndex = 0;
